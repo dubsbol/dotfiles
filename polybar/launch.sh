@@ -6,4 +6,4 @@ polybar -r dubsbar 2>&1 | tee -a /tmp/dubsbar.log & disown &
 picom --experimental-backends -b
 feh --no-fehbg --bg-fill -z $HOME/Pictures/WP/
 killall -q glava
-glava --desktop
+#glava --desktop
