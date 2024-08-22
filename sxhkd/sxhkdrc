@@ -7,7 +7,7 @@ super + Escape
 	kitty
 # program launcher
 super + space
-	rofi -show run -display-run ">"
+	rofi -modi drun -show drun -display-drun ">"
 # file explorer
 super + e
 	nemo
