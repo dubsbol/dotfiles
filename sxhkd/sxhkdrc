@@ -5,9 +5,9 @@
 # terminal emulator
 super + Escape
 	kitty
-# program launcher
-super + space
-	rofi -modi drun -show drun -display-drun ">"
+# program launcher / ssh
+super + {_, shift + }space
+	rofi {-modi drun -show drun -display-drun ">", -show ssh -terminal TERM="xterm-256color" kitty +kitten}
 # file explorer
 super + e
 	nemo
