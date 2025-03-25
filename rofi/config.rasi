@@ -1,7 +1,7 @@
 configuration {
-  drun {
-    display-name: ">";
+    drun {
+      display-name: ">";
+    }
   }
-
-}
- @theme "~/.config/rofi/themes/menusbol.rasi"
+@theme "~/.config/rofi/menusbol.rasi"
+  

@@ -8,6 +8,7 @@ main() {
   artist=$(playerctl -p spotify metadata artist)
   album=$(playerctl -p spotify metadata album)
   title=$(playerctl -p spotify metadata title)
+  level=$(playerctl -p spotify volume | head -c 4)
   icon="◼"
 
   if playerctl -p spotify status | grep "Playing" >/dev/null;
@@ -15,7 +16,7 @@ main() {
       icon="▶"
   fi
 
-  echo "$artist - $title <$icon>"
+  echo "$artist - $title <$icon> <$level>"
 }
 
 main "$@"

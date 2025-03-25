@@ -6,8 +6,8 @@
 super + Escape
 	kitty
 # program launcher / ssh
-super + {_, shift + }space
-	rofi {-modi drun -show drun -display-drun ">", -show ssh -terminal TERM="xterm-256color" kitty +kitten}
+super + {_,shift + }space
+	rofi -terminal kitty { -modes drun -show drun, -modes ssh -show ssh}
 # file explorer
 super + e
 	nemo

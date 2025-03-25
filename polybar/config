@@ -121,6 +121,8 @@ exec = ~/.config/polybar/spotify.sh
 interval = .5
 click-left = playerctl -p spotify play-pause 
 click-right = playerctl -p spotify next 
+scroll-up = playerctl -p spotify volume .01+
+scroll-down = playerctl -p spotify volume .01-
 
 [module/powermenu]
 type = custom/menu
