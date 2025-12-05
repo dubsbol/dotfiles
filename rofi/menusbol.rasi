@@ -1,8 +1,7 @@
 * {
-    background-color:      #002b36;
-    border-color:          #073642;
+    background-color:      #031926;
     text-color:           #657b83;
-    font:            "fixed 10";
+    font:            "Noto Mono 9";
 }
 window {
     anchor:     north;
@@ -24,8 +23,8 @@ entry {
     width:      10em;
 }
 element {
-    padding: 0px 2px;
+    padding: 2px 2px;
 }
 element selected {
-    background-color: #2aa198;
+    background-color: #00D0D0;
 }

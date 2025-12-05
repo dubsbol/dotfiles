@@ -1,12 +1,12 @@
 [colors]
-background = #002b36
+background = #031926
 background-alt = #073642
 foreground-alt = #586e75
 foreground = #657b83
 primary = #268bd2
-secondary = #2aa198
-alert = #cb4b16
-alert-alt = #b58900
+secondary = #00D0D0
+alert = #D00000
+alert-alt = #FEFCFD
 
 [bar/dubsbar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -14,7 +14,7 @@ width = 100%
 height = 18
 ;offset-x = .5%
 offset-y = .1%
-radius = 10.0
+#radius = 10.0
 fixed-center = true
 
 background = ${colors.background}
@@ -37,7 +37,7 @@ font-1 = Noto Sans Mono:fontformat=truetype:size=10:antialias=true;0
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = spotify pulseaudio time powermenu
+modules-right = spotify pulseaudio time 
 
 wm-restack = bspwm
 
@@ -100,11 +100,11 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = " <%percentage%%> "
 label-volume-foreground = ${colors.foreground-alt}
-label-volume-underline = ${colors.alert-alt}
+label-volume-underline = ${colors.alert}
 
 label-muted = " <DEAF> "
-label-muted-foreground = ${colors.alert}
-label-muted-underline = ${colors.alert}
+label-muted-foreground = ${colors.alert-alt}
+label-muted-underline = ${colors.alert-alt}
 
 click-right = "bspc rule -a Pavucontrol -o state=floating;pavucontrol"
 scroll-up = amixer set Master 5%-
@@ -116,7 +116,7 @@ tail = true
 format = " <label> "
 format-foreground = ${colors.foreground-alt}
 format-background = ${colors.background}
-format-underline = ${colors.alert-alt}
+format-underline = ${colors.alert}
 exec = ~/.config/polybar/spotify.sh
 interval = .5
 click-left = playerctl -p spotify play-pause 
