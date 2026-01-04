@@ -83,13 +83,13 @@ label-empty-padding = 1
 type = internal/date
 interval = 1
 
-date = "%d/%m/%Y"
+date = "%Y/%m/%d"
 
 time =%H:%M:%S
 
 format-underline = ${colors.alert}
 
-label = " <%time% %date%> "
+label = " <%date% %time%> "
 label-foreground = ${colors.foreground-alt}
 
 [module/pulseaudio]
