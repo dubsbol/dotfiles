@@ -1,7 +1,0 @@
-configuration {
-    parse-known-hosts: false; 
-    drun {
-      display-name: ">";
-    }
-  }
-@theme "~/.config/rofi/menusbol.rasi"
