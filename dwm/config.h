@@ -99,6 +99,7 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("systemctl poweroff")  },
 	{ MODKEY, 											XK_e,      spawn,          SHCMD("xfe")  },
 	{ MODKEY, 											XK_x, 		 spawn,          SHCMD("firefox")  },
+	{ MODKEY|ShiftMask, 						XK_s, 		 spawn,          SHCMD("scrot -s --line mode=edge ~/Pictures/Screenshots/%Y%m%d_%H%M%S.png")  },
 };
 
 /* button definitions */
