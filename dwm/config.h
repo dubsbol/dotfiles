@@ -6,8 +6,8 @@ static const unsigned int gappx  = 4;        /* gap pixel between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "BerkeleyMono:size=10" };
+static const char dmenufont[]       = "BerkeleyMono:size=10";
 static const char normbgcolor[]           = "#001e26";
 static const char normbordercolor[]       = "#004050";
 static const char normfgcolor[]           = "#a0c0c0";
@@ -28,7 +28,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "pavucontrol",     NULL,       "pavucontrol",       0,            1,	           -1 },
+	{ "alsamixer",     NULL,       "alsamixer",       0,            1,	           -1 },
 };
 
 /* layout(s) */
@@ -68,8 +68,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_l,      incnmaster,     {.i = -1 } },
 	// { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	// { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -81,7 +79,8 @@ static const Key keys[] = {
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_f,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      incnmaster,     {.i = +1 } },
+	// { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	// { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	// { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	// { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
@@ -91,7 +90,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
+	// TAGKEYS(                        XK_6,                      5)
 	// TAGKEYS(                        XK_7,                      6)
 	// TAGKEYS(                        XK_8,                      7)
 	// TAGKEYS(                        XK_9,                      8)
@@ -110,7 +109,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD("playerctl -p spotify play-pause && kill -USR1 $(pidof slstatus)") },
-	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("pavucontrol && kill -USR1 $(pidof slstatus)") },
+	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("alsamixer && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button3,        spawn,          SHCMD("playerctl -p spotify next && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button4,        spawn,          SHCMD("amixer set Master 5%+ && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button5,        spawn,          SHCMD("amixer set Master 5%- && kill -USR1 $(pidof slstatus)") },
