@@ -66,8 +66,8 @@ static const char unknown_str[] = "";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ run_command, "^c#ff0000^%s^c#ffffff^",           "~/.config/obs.sh" },
-	{ run_command, "%s",           "~/.config/spotify.sh" },
+	{ run_command, "^c#ff0000^%s^c#ffffff^",           "~/.config/slstatus/sharing.sh" },
+	{ run_command, "%s",           "~/.config/slstatus/music.sh" },
 	{ run_command, "[%s%%]",           "amixer sget Master | grep -Pom 1 '[0-9]{,3}(?=%)'" },
 	{ datetime, "[%s]",           "%F %T" },
 };

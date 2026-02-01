@@ -64,6 +64,7 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_space,  spawn,          SHCMD("kitty ssh $(grep -Po '(?<=Host ).*' ~/.ssh/config | dmenu -p ssh)") },
 	{ MODKEY,             					XK_Escape, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
@@ -97,7 +98,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      spawn,          SHCMD("systemctl poweroff")  },
 	{ MODKEY, 											XK_e,      spawn,          SHCMD("xfe")  },
-	{ MODKEY, 											XK_x, 		 spawn,          SHCMD("firefox")  },
+	{ MODKEY, 											XK_x, spawn,      		 SHCMD("firefox")  },
 	{ MODKEY|ShiftMask, 						XK_s, 		 spawn,          SHCMD("scrot -s --line mode=edge ~/Pictures/Screenshots/%Y%m%d_%H%M%S.png")  },
 };
 
@@ -109,7 +110,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button1,        spawn,          SHCMD("playerctl -p spotify play-pause && kill -USR1 $(pidof slstatus)") },
-	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("alsamixer && kill -USR1 $(pidof slstatus)") },
+	{ ClkStatusText,        0,              Button2,        spawn,          SHCMD("pavucontrol && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button3,        spawn,          SHCMD("playerctl -p spotify next && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button4,        spawn,          SHCMD("amixer set Master 5%+ && kill -USR1 $(pidof slstatus)") },
 	{ ClkStatusText,        0,              Button5,        spawn,          SHCMD("amixer set Master 5%- && kill -USR1 $(pidof slstatus)") },
@@ -121,4 +122,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
