@@ -15,7 +15,7 @@ main() {
       icon="▶"
   fi
 
-  echo "[$artist - $title $icon]"
+  echo "[$icon $artist - $title]"
 }
 
 main "$@"
